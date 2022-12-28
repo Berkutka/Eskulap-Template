@@ -1,0 +1,137 @@
+/*Обнуление*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+.content{
+
+}
+
+.welcom__icon{
+    margin: 180px auto;
+}
+
+.welcom__icon2{
+    position: relative;
+    text-align: center;
+    /*padding: 10px;*/
+    border-radius: 50%;
+    /*background-color: blue;*/
+
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.welcom__icon2:before{
+    content: "";
+    /*display: block;*/
+    position: absolute;
+    border: 15px solid #5398fe;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+    opacity: 0;
+}
+
+.welcom__icon2:before,
+.welcom__icon2:after{
+    content: '';
+    position: absolute;
+    border: 5px solid #5398fe;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    opacity: 0;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+}
+
+.welcom__icon2:after{
+    animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+             /*_________--------------______________*/
+
+.con{
+    margin: 200px auto;
+}
+
+span{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    display: grid;
+}
+
+span:before{
+    content: "icon";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span:after{
+    content: "";
+    width: 100px;
+    height: 100px;
+    transform: scale(1.5);
+    background-color: red;
+    opacity: .5;
+    display: block;
+    border-radius: 50%;
+}
+
+span:before,
+span:after{
+    grid-area: 1/2;
+}
+
+span:hover:after{
+    transition: all 0.2s;
+    animation: shadow .5s infinite linear;
+}
+
+@keyframes shadow {
+    0% {
+        transform: scale(1.3);
+        box-shadow: 0 0 10px 0px red, 0 0 10px 0px red;
+    }
+    100% {
+        transform: scale(1.8);
+        box-shadow: 0 0 10px 0px rgba(255, 48, 26, 0), 0 0 4px 30px rgba(255, 48, 26, 0);
+    }
+}
